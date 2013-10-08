@@ -1,0 +1,353 @@
+@primary: #3399FF;
+@secondary: #303030;
+@background: #FEFEFE;
+
+@hover: darken( @primary, 25% );
+
+/* ============================================================ */
+/* Base */
+/* ============================================================ */
+
+body {
+    background: @background;
+    color: #424242;
+    font: normal normal 18px "Open Sans", arial, sans-serif;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid @secondary;
+}
+
+h1, h2 {
+    margin-bottom: 2em;
+    text-transform: none;
+}
+
+h3, h4, h5, h6 {
+    margin-bottom: 1em;
+    text-decoration: none;
+}
+
+h1 { font-size: 1.44em; }
+h2 { font-size: 1.33em; }
+h3 { font-size: 1.11em; }
+h4 { font-size: 1.00em; }
+h5 { font-size: 0.88em; }
+h6 { font-size: 0.77em; }
+
+p {
+    line-height: 1.8em;
+    margin: 0 0 1.66em;
+}
+
+a {
+    color: @primary;
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style-position: inside;
+    line-height: 1.8em;
+    margin: 0 0 2.22em;
+    padding: 0;
+    li {
+        margin: 0 0 0.66em;
+    }
+}
+
+blockquote {
+    border-left: 1px solid @secondary;
+    margin: 2.22em 0;
+    padding: 0.44em 1.66em;
+    p {
+        color: #AEADAD;
+        display: block;
+        font-style: italic;
+        margin: 0;
+        width: 100%;
+    }
+}
+
+img {
+    display: block;
+    margin: 2.22em auto;
+    width: auto;
+    max-width: 100%;
+}
+
+pre {
+    background: lighten(@secondary, 60%);
+    border: 1px solid #DDDBCC;
+    margin: 0 0 2.22em;
+    padding: 0.77em;
+}
+
+::selection {
+    background: lighten(@secondary, 70%);
+    color: #000;
+    display: block;
+}
+
+/* ============================================================ */
+/* General Appearance */
+/* ============================================================ */
+
+.container {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    max-width: 50em;
+}
+
+.button {
+    background: @secondary;
+    border: none;
+    border-radius: 0.22em;
+    color: @background;
+    font-size: 0.77em;
+    font-weight: 700;
+    padding: 0.77em 0.88em;
+    text-transform: uppercase;
+    &:hover {
+        background: @hover;
+    }
+}
+
+.button-square {
+    background: @primary;
+    float: left;
+    margin: 0 0 0 1em;
+    padding: 0.245em 0.5em;
+    i {
+        color: @background;
+    }
+    &:hover {
+        background: @hover;
+    }
+}
+
+/* ============================================================ */
+/* Site Header */
+/* ============================================================ */
+
+.site-header {
+    padding-top: 1em;
+    margin: 0 0 2em 0;
+    overflow: auto;
+    text-align: center;
+    text-transform: uppercase;
+    background: @secondary;
+    color: @background;
+}
+
+.site-title-wrapper {
+    display: table;
+    margin: 0 auto;
+}
+
+.site-description {
+    margin: 1.11em 0;
+}
+
+.site-contact {
+    text-align: center;
+    margin: 1em 0;
+    .button-square {
+        float:none;
+        margin: 0 0.5em;
+    }
+}
+
+.site-title {
+    float: left;
+    font-size: 0.77em;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    a {
+        float: left;
+        background: @primary;
+        color: @background;
+        padding: 0.5em 1em;
+        &:hover {
+            background: @hover;
+        }
+    }
+}
+
+/* ============================================================ */
+/* Post */
+/* ============================================================ */
+
+#latest-post { display: none; }
+
+.post { margin: 0 2.22em; }
+
+.post-header {
+    margin: 0 0 2.77em;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.post-title {
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0.55em 0;
+    text-transform: uppercase;
+}
+
+.post-meta {
+    color: #AEADAD;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 4.44em;
+    margin: 1.77em 0 0;
+    &:before, &:after {
+        border-bottom: 1px solid @secondary;
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+    }
+    p {
+        margin: 0.5em 0;
+    }
+}
+
+    
+
+.post-content {
+    margin: 0 0 6em;
+}
+
+.post-navigation {
+    display: table;
+    margin: 2em auto;
+}
+
+.newer-posts,
+.older-posts {
+    background: @primary;
+    color: @background;
+    font-size: 0.77em;
+    font-weight: 600;
+    margin: 0 0.33em;
+    padding: 0.33em 0.66em;
+    text-transform: uppercase;
+    &:hover {
+        background: @secondary;
+    }
+}
+
+/* ============================================================ */
+/* Post Index */
+/* ============================================================ */
+
+.post-list {
+    list-style: none;
+    margin: 2.22em;
+    padding: 0;
+}
+
+.post-stub {
+    border-bottom: 1px solid @secondary;
+    margin: 0;
+    &:first-child {
+        padding-top: 0;
+        border-top: 1px solid @secondary;
+    }
+    a {
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        display: block;
+        color: #424242;
+        padding: 1.22em 0.55em;
+    }
+    a:hover {
+        background: lighten(@secondary, 70%);
+        color: @primary;
+        padding: 1.22em 1.22em;
+    }
+}
+
+.post-stub-title {
+    display: inline-block;
+    margin: 0;
+    text-transform: none;
+}
+
+.post-stub-date { display: inline-block; }
+
+.post-stub-date:before { content: "/ "; }
+
+.next-posts-link,
+.previous-posts-link {
+    a {
+        display: block;
+        padding: 8px 11px;
+    }
+}
+
+/* ============================================================ */
+/* Footer */
+/* ============================================================ */
+
+.footer {
+    background: @secondary;
+    color: #D3D3D3;
+    padding: 2.22em 0 2.22em;
+}
+
+.footer .site-title-wrapper { margin-bottom: 35px; }
+
+.footer .site-title a:hover {
+    background: @hover;
+}
+
+.footer-copyright {
+    color: #656565;
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.footer-copyright a {
+    color: #656565;
+    font-weight: 700;
+}
+
+.footer-copyright a:hover { color: @background; }
+
+/* ============================================================ */
+/* NProgress */
+/* ============================================================ */
+
+#nprogress .bar { background: @primary; }
+
+#nprogress .peg { box-shadow: 0 0 10px @primary, 0 0 5px @primary; }
+
+#nprogress .spinner-icon {
+    border-top-color: @primary;
+    border-left-color: @primary;
+}
+
+/* ============================================================ */
+/* Media Queries */
+/* ============================================================ */
+
+@media only screen and (max-width: 600px) {
+    .post-stub-title { display: block; }
+
+    .post-stub-date:before {
+        content: "";
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .post-title { font-size: 32px; }
+}

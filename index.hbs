@@ -4,8 +4,10 @@
     <article class="{{post_class}}">
         <header class="post-header">
             <h1 class="post-title">{{posts.0.title}}</h1>
-
-            <p class="post-date"><time datetime="{{posts.0.published_at}}">Published {{date posts.0.published_at format="MMMM Do YYYY"}}</time></p>
+                <div class="post-meta">
+                    <p class="post-date"><time datetime="{{published_at}}">Published {{date format="MMMM Do YYYY"}}</time></p>
+                    <p class="post-author">By: <a href="{{posts.0.author.website}}?rel=author">{{posts.0.author.name}}</a> <a href="mailto:{{posts.0.author.email}}"><i class="icon-envelope"></i></a></p>
+                </div>
         </header>
 
         <div class="post-content">
@@ -20,13 +22,11 @@
             <li class="post-stub">
                 <a class="js-ajax-link"  title="{{title}}" href="{{url}}">
                     <h4 class="post-stub-title">{{title}}</h4>
-
-                    <time class="post-stub-date" datetime="{{published_at}}">Published {{date format="MMMM Do YYYY"}}</time>
+                    <time class="post-stub-date" datetime="{{published_at}}">{{date format="MMMM Do YYYY"}}</time>
                 </a>
             </li>
         {{/foreach}}
     </ol>
-
     <div class="post-navigation">
         {{pagination}}
     </div>
